@@ -1,0 +1,32 @@
+[project]
+name = "pytest-netbox-docker"
+version = "0.1.0"
+description = "Pytest fixtures to run Netbox in Docker during your test suites"
+
+readme = "README.md"
+authors = [
+    {name = "Link Society", email = "contact@link-society.com"},
+]
+
+license = {text = "MIT"}
+classifiers = [
+    "Framework :: Pytest",
+]
+
+requires-python = ">=3.12"
+dependencies = [
+    "pytest>=8.3.5",
+    "docker>=7.1.0",
+    "python-decouple>=3.8",
+]
+
+
+[project.entry-points.pytest11]
+pytest_netbox_docker = "pytest_netbox_docker.plugin"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
